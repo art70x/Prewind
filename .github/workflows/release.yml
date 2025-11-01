@@ -13,15 +13,28 @@ jobs:
       continue: ${{ steps.check.outputs.continue }}
       workflow: ${{ steps.check.outputs.workflow }}
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v5
+    - name: Checkout the repository
+      uses: actions/checkout@v5
 
-      - name: Context check
-        id: check
-        uses: trigensoftware/simple-release-action@v1
-        with:
-          workflow: check
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        cache: 'pnpm'
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+
+    - name: Context check
+      id: check
+      uses: trigensoftware/simple-release-action@v1
+      with:
+        workflow: check
+        github-token: ${{ secrets.GITHUB_TOKEN }}
 
   pull-request:
     runs-on: ubuntu-latest
@@ -49,15 +62,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
