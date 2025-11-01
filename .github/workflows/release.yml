@@ -29,6 +29,11 @@ jobs:
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
 
+    - name: Set Git identity
+      run: |
+        git config --global user.name "Art 70x"
+        git config --global user.email "206083185+art70x@users.noreply.github.com"
+
     - name: Context check
       id: check
       uses: trigensoftware/simple-release-action@v1
@@ -44,6 +49,11 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v5
+
+      - name: Set Git identity
+        run: |
+          git config --global user.name "Art 70x"
+          git config --global user.email "206083185+art70x@users.noreply.github.com"
 
       - name: Create or update pull request
         uses: trigensoftware/simple-release-action@v1
@@ -74,6 +84,11 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Set Git identity
+        run: |
+          git config --global user.name "Art 70x"
+          git config --global user.email "206083185+art70x@users.noreply.github.com"
 
       - name: Release
         uses: trigensoftware/simple-release-action@v1
