@@ -25,12 +25,12 @@
     "prewind": "dist/cli.js"
   },
   "scripts": {
-    "prebuild": "nr check",
     "build": "tsup",
     "check": "tsc",
     "dev": "tsx src/cli.ts",
     "format": "prettier -w src",
-    "prepare": "nr build"
+    "prepare": "nr build",
+    "release": "standard-version"
   },
   "dependencies": {
     "commander": "^14.0.2",
@@ -41,10 +41,16 @@
     "@types/node": "^24.9.2",
     "prettier": "^3.6.2",
     "prettier-plugin-packagejson": "^2.5.19",
+    "standard-version": "^9.5.0",
     "terser": "^5.44.0",
     "tsup": "^8.5.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.20.0"
+  "packageManager": "pnpm@10.20.0",
+  "publishConfig": {
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  }
 }
