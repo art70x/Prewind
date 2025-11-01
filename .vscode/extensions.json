@@ -1,7 +1,7 @@
 {
-    "recommendations": [
-      "EditorConfig.EditorConfig",
-      "esbenp.prettier-vscode",
-      "ms-vscode.vscode-typescript-next"
-    ]
-  }
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}

@@ -1,11 +1,11 @@
 {
-    "editor.codeActionsOnSave": {
-      "source.fixAll": "always"
-    },
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "explorer.fileNesting.enabled": true,
-    "explorer.fileNesting.patterns": {
-      "package.json": "package-lock.json, pnpm*"
-    }
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, pnpm*"
   }
+}
