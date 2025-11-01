@@ -18,16 +18,16 @@
     "type": "git",
     "url": "git+https://github.com/art70x/Prewind.git"
   },
-  "files": [
-    "dist/*",
-    "README.md"
-  ],
   "license": "MIT",
   "author": "art70x",
   "type": "module",
   "bin": {
     "prewind": "dist/cli.js"
   },
+  "files": [
+    "dist/*",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup",
     "check": "tsc",
