@@ -18,6 +18,10 @@
     "type": "git",
     "url": "git+https://github.com/art70x/Prewind.git"
   },
+  "files": [
+    "dist/*",
+    "README.md"
+  ],
   "license": "MIT",
   "author": "art70x",
   "type": "module",
@@ -47,10 +51,5 @@
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.20.0",
-  "publishConfig": {
-    "provenance": true,
-    "registry": "https://registry.npmjs.org/",
-    "tag": "latest"
-  }
+  "packageManager": "pnpm@10.20.0"
 }
