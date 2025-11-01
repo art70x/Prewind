@@ -1,0 +1,47 @@
+{
+  "name": "prewind",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A lightweight preprocessor that expands Tailwind shorthand like hover(px-4 py-2) into hover:px-4 hover:py-2.",
+  "homepage": "https://github.com/art70x/Prewind#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/art70x/Prewind.git"
+  },
+  "bugs": {
+    "url": "https://github.com/art70x/Prewind/issues"
+  },
+  "keywords": [
+    "cli",
+    "utility",
+    "preprocessor",
+    "shorthand",
+    "tailwindcss",
+    "art70x"
+  ],
+  "bin": {
+    "prewind": "dist/cli.js"
+  },
+  "scripts": {
+    "prebuild": "nr check",
+    "build": "tsup",
+    "check": "tsc",
+    "dev": "tsx src/cli.ts",
+    "format": "prettier -w src"
+  },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "fast-glob": "^3.3.3"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^27.0.1",
+    "@types/node": "^24.9.2",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.20.0",
+  "author": "art70x",
+  "license": "MIT"
+}
