@@ -195,4 +195,4 @@ prewind src/**/*.html
 
 ---
 
-> 🌀 write less, expand more_
+> 🌀 write less, expand more\_
