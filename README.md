@@ -2,8 +2,8 @@
 
 > write less, expand more
 
-[![NPM Downloads](https://img.shields.io/npm/dm/prewind?style=flat&colorA=030812&colorB=2461db)](https://www.npmjs.com/package/prewind)
-[![NPM Version](https://img.shields.io/npm/v/rewind?style=flat&colorA=030812&colorB=2461db)](https://www.npmjs.com/package/prewind)
+[![NPM Downloads](https://img.shields.io/npm/dm/@art70x/prewind?style=flat&colorA=030812&colorB=2461db)](https://www.npmjs.com/package/@art70x/prewind)
+[![NPM Version](https://img.shields.io/npm/v/@art70x/prewind?style=flat&colorA=030812&colorB=2461db)](https://www.npmjs.com/package/@art70x/prewind)
 [![Github Stars](https://img.shields.io/github/stars/art70x/prewind?style=flat&colorA=030812&colorB=2461db)](https://github.com/art70x/prewind/stargazers)
 [![License](https://img.shields.io/github/license/art70x/prewind?style=flat&colorA=030812&colorB=2461db)](https://github.com/art70x/prewind/blob/main/LICENSE)
 
@@ -39,17 +39,17 @@ and automatically transform them into:
 ## 📦 Installation
 
 ```bash
-pnpm add -D prewind
+pnpm add -D @art70x/prewind
 # or
-npm install -D prewind
+npm install -D @art70x/prewind
 # or
-yarn add -D prewind
+yarn add -D @art70x/prewind
 ```
 
 Global install (optional):
 
 ```bash
-pnpm add -g prewind
+pnpm add -g @art70x/prewind
 ```
 
 ---
