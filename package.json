@@ -37,8 +37,11 @@
     "release": "standard-version"
   },
   "dependencies": {
+    "cli-spinners": "^3.3.0",
     "commander": "^14.0.2",
-    "fast-glob": "^3.3.3"
+    "fast-glob": "^3.3.3",
+    "yocto-spinner": "^1.0.0",
+    "yoctocolors": "^2.1.2"
   },
   "devDependencies": {
     "@antfu/ni": "^27.0.1",
