@@ -6,6 +6,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "package.json": "package-lock.json, pnpm*"
+    "package.json": "package-lock.json, pnpm*",
+    ".gitignore": ".*ignore",
+    "tsup.config.ts": "eslint*, prettier*"
   }
 }
