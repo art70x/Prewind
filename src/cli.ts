@@ -7,6 +7,8 @@ import { transformFileContent } from './transform'
 
 program
   .name('prewind')
+  .alias('pw')
+  .version('v1.0.0')
   .description(
     'Expand Tailwind shorthand like hover(bg-blue-500 text-blue-50) into hover:bg-blue-500 hover:text-blue-50.',
   )
@@ -14,6 +16,7 @@ program
   .option('-w, --write', 'Overwrite files in place')
   .option('-o, --out <dir>', 'Output directory for transformed files')
   .option('--debug', 'Show detailed transformation tree')
+  .configureHelp({sortOptions: true})
   .action(async (patterns, options) => {
     const files = await fg(patterns, { absolute: true })
 
