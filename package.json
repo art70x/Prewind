@@ -34,7 +34,7 @@
     "check": "tsc",
     "lint": "eslint .",
     "format": "prettier -w src",
-    "prepare": "nr build",
+    "prepublishOnly": "nr build",
     "release": "standard-version"
   },
   "dependencies": {
