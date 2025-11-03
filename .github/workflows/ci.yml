@@ -1,4 +1,4 @@
-name: format
+name: Lint/Format
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  format:
+  lint-format:
     runs-on: ubuntu-latest
 
     if: github.actor != 'github-actions[bot]' # Avoid infinite loops
@@ -27,6 +27,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Lint code
+        run: pnpm run lint
 
       - name: Format code
         run: pnpm exec prettier -w .
