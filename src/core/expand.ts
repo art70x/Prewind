@@ -7,30 +7,15 @@
  * Supports nested and prefixed variants like:
  * dark(hover(bg-blue-400)), group-hover:(...), peer-focus:(...), not-()
  */
-export function transformFileContent(content: string, debug = false): string {
-  return content.replace(/class(Name)?=["']([^"']+)["']/g, (_match, _name, classValue) => {
-    const expanded = expandVariants(classValue, '', debug)
-    return `class="${expanded.join(' ')}"`
-  })
-}
 
 /**
  * Recursively expands grouped Tailwind variant syntax.
  * @param input - the class attribute content
  * @param prefix - accumulated variant prefix (e.g. "hover", "dark:hover")
- * @param debug - whether to print the debug tree
- * @param depth - internal recursion depth for indentation
  */
-function expandVariants(input: string, prefix = '', debug = false, depth = 0): string[] {
+export function expandVariants(input: string, prefix = ''): string[] {
   const tokens: string[] = []
   let i = 0
-  const pad = (lvl: number) => '  '.repeat(lvl)
-
-  // Print debug header once
-  if (debug && depth === 0) {
-    console.log('\n🌀 Prewind Debug Tree')
-    console.log('+'.repeat(48))
-  }
 
   while (i < input.length) {
     const char = input[i]
@@ -55,10 +40,8 @@ function expandVariants(input: string, prefix = '', debug = false, depth = 0): s
     if (input[i] === '(') {
       const inner = extractGroup(input, i)
       const newPrefix = prefix ? `${prefix}:${token}` : token
-      if (debug) console.log(`${pad(depth)}→ ${newPrefix}(`)
-      const nested = expandVariants(inner.content, newPrefix, debug, depth + 1)
+      const nested = expandVariants(inner.content, newPrefix)
       tokens.push(...nested)
-      if (debug) console.log(`${pad(depth)}) end ${newPrefix}`)
       i = inner.nextIndex
       continue
     }
@@ -69,7 +52,6 @@ function expandVariants(input: string, prefix = '', debug = false, depth = 0): s
       if (next) {
         const combined = prefix ? `${prefix}:${token}${next}` : `${token}${next}`
         tokens.push(combined)
-        if (debug) console.log(`${pad(depth)}• ${combined}  (prefix chain)`)
         i += next.length
         continue
       }
@@ -78,13 +60,7 @@ function expandVariants(input: string, prefix = '', debug = false, depth = 0): s
     // --- CASE 3: Regular class name
     const expanded = prefix ? `${prefix}:${token}` : token
     tokens.push(expanded)
-    if (debug) console.log(`${pad(depth)}• ${expanded}`)
     i++
-  }
-
-  // Print debug footer
-  if (debug && depth === 0) {
-    console.log('+'.repeat(48) + '\n')
   }
 
   return tokens
