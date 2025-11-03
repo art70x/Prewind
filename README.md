@@ -2,6 +2,11 @@
 
 > write less, expand more
 
+[![NPM Downloads](https://img.shields.io/npm/dm/prewind?style=flat&colorA=030812&colorB=2461db)](https://www.npmjs.com/package/prewind)
+[![NPM Version](https://img.shields.io/npm/v/rewind?style=flat&colorA=030812&colorB=2461db)](https://www.npmjs.com/package/prewind)
+[![Github Stars](https://img.shields.io/github/stars/art70x/prewind?style=flat&colorA=030812&colorB=2461db)](https://github.com/art70x/prewind/stargazers)
+[![License](https://img.shields.io/github/license/art70x/prewind?style=flat&colorA=030812&colorB=2461db)](https://github.com/art70x/prewind/blob/main/LICENSE)
+
 A lightweight **preprocessor** that expands Tailwind-style shorthand into full variant syntax.
 Write expressive, readable classes like:
 
@@ -191,8 +196,8 @@ prewind src/**/*.html
 ## 🧑‍💻 Author
 
 **art70x** — MIT License © 2025
-[GitHub Repository →](https://github.com/art70x/Prewind)
+[GitHub Repository →](https://github.com/art70x/prewind)
 
 ---
 
-> 🌀 write less, expand more\_
+> 🌀 _Prewind — write less, expand more_
