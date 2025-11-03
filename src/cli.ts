@@ -15,7 +15,7 @@ program
   .argument('<patterns...>', 'File paths or glob patterns to process')
   .option('-w, --write', 'Overwrite files in place')
   .option('-o, --out <dir>', 'Output directory for transformed files')
-  .configureHelp({sortOptions: true})
+  .configureHelp({ sortOptions: true })
   .action(async (patterns, options) => {
     try {
       await log.withSpinner('Processing files...', async () => {
