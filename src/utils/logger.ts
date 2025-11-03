@@ -32,9 +32,13 @@ export function createLogger(): Logger {
       const result = await Promise.resolve(task())
       spinner.success(text)
       return result
-    } catch (err: any) {
+    } catch (err: unknown) {
       spinner.error(text)
-      console.error(format('error', err.message || String(err)))
+      if (err instanceof Error) {
+        console.error(format('error', err.message))
+      } else {
+        console.error(format('error', String(err)))
+      }
       throw err
     }
   }
