@@ -29,11 +29,11 @@
     "README.md"
   ],
   "scripts": {
-    "dev": "tsx src/cli.ts",
     "build": "tsup",
     "check": "tsc",
-    "lint": "eslint .",
+    "dev": "tsx src/cli.ts",
     "format": "prettier -w src",
+    "lint": "eslint .",
     "prepublishOnly": "nr build",
     "release": "standard-version"
   },
